@@ -28,7 +28,9 @@
 
   <div class="cubes">
     {{#each cubes}}
-    {{> cube}}
+      {{> cube}}
+    {{else}}
+      <h2>No results to show!</h2>
     {{/each}}
   </div>
 
