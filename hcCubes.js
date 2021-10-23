@@ -1,14 +1,5 @@
 [
   {
-    id: 'skmadw88d1kdfmd2',
-    name: "Rubik's Cube",
-    description:
-      "The Rubik's Cube is a 3-D combination puzzle invented in 1974[2][3] by Hungarian sculptor and professor of architecture Ernő Rubik. Originally called the Magic Cube,[4] the puzzle was licensed by Rubik to be sold by Ideal Toy Corp. in 1980[5] via businessman Tibor Laczi and Seven Towns founder Tom Kremer.",
-    imageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Rubiks_cube_solved.jpg/220px-Rubiks_cube_solved.jpg',
-    difficulty: '3',
-  },
-  {
     id: 'iesfo5c9kugzbaai',
     name: 'Regular hexahedron ',
     description:
