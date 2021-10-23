@@ -8,6 +8,8 @@ router.get('/add-accessory', async (req, res) => {
   let cube = await cubeService.getOne(req.params.cubeId);
   let accessories = await accessoryService.getAll();
 
+  console.log(accessories);
+
   res.render('cube/attachAccessory', { cube, accessories });
 });
 
