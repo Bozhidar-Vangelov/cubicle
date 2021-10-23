@@ -11,8 +11,8 @@ const create = (name, description, imageUrl, difficulty) => {
   return cube.save();
 };
 
-const search = (text, from, to) => {
-  let result = getAll();
+const search = async (text, from, to) => {
+  let result = await getAll();
 
   if (text) {
     result = result.filter((x) =>
