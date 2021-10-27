@@ -23,7 +23,7 @@ const getCubeDetails = async (req, res) => {
   res.render('cube/details', { ...cube });
 };
 
-router.get('/create', getCreateCube);
+router.get('/create/cube', getCreateCube);
 router.post('/create', createCube);
 router.get('/details/:cubeId', getCubeDetails);
 router.use('/details/:cubeId/accessory', cubeAccessoryController);
