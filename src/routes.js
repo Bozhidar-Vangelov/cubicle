@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.use(homeController);
 router.use(cubeController);
-router.use('/create', accessoryController);
+router.use(accessoryController);
 router.use('*', (req, res) => {
   res.render('404');
 });
