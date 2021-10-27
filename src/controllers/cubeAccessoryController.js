@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router({ mergeParams: true });
+const router = require('express').Router({ mergeParams: true });
 
 const cubeService = require('../services/cubeService.js');
 const accessoryService = require('../services/accessoryService.js');

@@ -1,9 +1,7 @@
-const express = require('express');
+const router = require('express').Router();
 
 const cubeService = require('../services/cubeService.js');
 const cubeAccessoryController = require('./cubeAccessoryController.js');
-
-const router = express.Router();
 
 const getCreateCube = (req, res) => {
   res.render('cube/create');

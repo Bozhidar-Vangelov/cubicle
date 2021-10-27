@@ -1,7 +1,6 @@
-const express = require('express');
-const cubeService = require('../services/cubeService.js');
+const router = require('express').Router();
 
-const router = express.Router();
+const cubeService = require('../services/cubeService.js');
 
 const home = async (req, res) => {
   let cubes = await cubeService.getAll();
