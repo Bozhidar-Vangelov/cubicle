@@ -5,12 +5,13 @@ const cookieParser = require('cookie-parser');
 const routes = require('./routes.js');
 const config = require('./config/config.json')[process.env.NODE_ENV];
 const initDatabase = require('./config/database.js');
+const authMiddleware = require('./middlewares/authMiddleware.js');
 
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
+app.use(authMiddleware.verifyToken);
 require('./config/handlebars')(app);
 
 app.use(express.static(path.resolve(__dirname, './public')));

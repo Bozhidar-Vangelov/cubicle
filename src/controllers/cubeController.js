@@ -26,6 +26,11 @@ const getEditCubePage = (req, res) => {
 };
 
 const getDeleteCubePage = (req, res) => {
+  console.log(req.user);
+  if (!req.user) {
+    return res.status(401).redirect('/404');
+  }
+
   res.render('cube/delete');
 };
 
