@@ -10,7 +10,7 @@ function verifyToken(req, res, next) {
 
   jwt.verify(token, SECRET, function (err, decodedToken) {
     if (err) {
-      res.status(401).redirect('/login');
+      return res.status(401).redirect('/login');
     }
 
     req.user = decodedToken;
@@ -19,8 +19,17 @@ function verifyToken(req, res, next) {
   });
 }
 
+function isAuth(req, res, next) {
+  if (!req.user) {
+    return res.status(401).redirect('/login');
+  }
+
+  next();
+}
+
 const authMiddleware = {
   verifyToken,
+  isAuth,
 };
 
 module.exports = authMiddleware;
