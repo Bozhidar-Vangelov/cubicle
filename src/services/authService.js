@@ -1,6 +1,9 @@
 const User = require('../models/User.js');
 const bcrypt = require('bcrypt');
 
+const jwtUtils = require('../utils/jwtUtils.js');
+const { SECRET } = require('../constants.js');
+
 function register(username, password) {
   return User.create({ username, password });
 }
@@ -20,23 +23,21 @@ async function login(username, password) {
     console.log(error);
     return;
   }
+}
 
-  //   return User.findOne({ username })
-  //     .then((user) => {
-  //       return Promise.all([bcrypt.compare(password, user.password), user]);
-  //     })
-  //     .then(([isValid, user]) => {
-  //       if (isValid) {
-  //         return user;
-  //       } else {
-  //         throw { message: 'Cannot find username or password' };
-  //       }
-  //     });
+function createToken(user) {
+  let payload = {
+    _id: user._id,
+    username: user.username,
+  };
+
+  return jwtUtils.promiseSign(payload, SECRET);
 }
 
 const authService = {
   register,
   login,
+  createToken,
 };
 
 module.exports = authService;
